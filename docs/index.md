@@ -13,5 +13,11 @@ as a notebook to visit when you need help.
 fedora.md
 services.md
 commands.md
+
+```
+```{toctree}
+:maxdepth: 3
+:caption: Clouds
+clouds.md
 ```
 
