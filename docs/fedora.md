@@ -35,3 +35,11 @@ grub> initrd (hd0,gpt2)/initramfs-5.14.0-427.26.1.el9_4.aarch64.img
 grub> set boot=(hd0,gpt2)
 grub> boot
 ```
+
+## Switch system edition
+```
+dnf grouplist -v
+dnf install @kde-desktop-environment
+dnf -y group install 'Fedora Workstation'
+systemctl set-default graphical.target
+```

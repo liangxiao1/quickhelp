@@ -7,10 +7,11 @@ as a notebook to visit when you need help.
 
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 3
 :caption: Contents
 
 fedora.md
 services.md
+commands.md
 ```
 
