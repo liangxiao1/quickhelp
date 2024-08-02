@@ -8,11 +8,12 @@ as a notebook to visit when you need help.
 
 ```{toctree}
 :maxdepth: 3
-:caption: Contents
+:caption: Linux
 
 fedora.md
 services.md
 commands.md
+usefullinks.md
 
 ```
 ```{toctree}

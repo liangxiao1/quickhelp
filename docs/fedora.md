@@ -30,10 +30,13 @@ grub> boot
 There command seems slightly difference in rhel.
 ```
 grub> ls (hd0,gpt2)/
-grub> linux (hd0,gpt2)/vmlinuz-5.14.0-427.26.1.el9_4.aarch64 root=UUID=0f5e676b-368d-4357-921b-f2dd60a9109a console=tty0 console=ttyS0,115200n8
+grub> cat (hd0,gpt2)/grub2/grubenv (check current boot setting)
+grub> cat (hd0,gpt2)/loader/entries/ec20f931f1e42d1569dc978a7838f0ca-4.18.0-553.8.1.el8_10.aarch64.conf
+grub> linux (hd0,gpt2)/vmlinuz-5.14.0-427.26.1.el9_4.aarch64 root=UUID=0f5e676b-368d-4357-921b-f2dd60a9109a console=tty0 console=ttyS0,115200n8 selinux=0
 grub> initrd (hd0,gpt2)/initramfs-5.14.0-427.26.1.el9_4.aarch64.img
 grub> set boot=(hd0,gpt2)
 grub> boot
+grub> clear (to clean up screen)
 ```
 
 ## Switch system edition
