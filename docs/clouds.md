@@ -5,7 +5,7 @@
 ```
 $ pip install awscli
 $ aws configure
-$ aws ec2 run-instances --region=us-west-2 --image-id=ami-9fa3xxx --key-name xilixxx --instance-type c5.2xlarge  --subnet-id subnet-b4xxx --associate-public-ip-address --placement {\"AvailabilityZone\":\"us-west-2c\"}
+$ aws ec2 run-instances --region=us-west-2 --image-id=ami-9fa3xxx --key-name xilixxx --instance-type c5.2xlarge  --security-group-ids sg-xxx --subnet-id subnet-b4xxx --associate-public-ip-address --profile default --placement {\"AvailabilityZone\":\"us-west-2c\"}
 $ aws ec2 describe-instances --instance-ids i-xxxxxxxx
 $ aws ec2 create-tags --resources i-xxxxxxx --tags Key=Name,Value=xxxxxxx
 $ aws ec2 describe-instance-types --instance-types m5zn.6xlarge --output json|jq '.[\"InstanceTypes\"][][\"VCpuInfo\"]'

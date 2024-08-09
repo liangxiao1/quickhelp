@@ -3,7 +3,8 @@
 ## RHEL Links
 [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078) - release date with kernel version  
 [Red Hat Enterprise Linux Life Cycle Overview](https://access.redhat.com/support/policy/updates/errata) - timeline and concepts like EUS, ELS  
-[End-of-life (EOL)](https://endoflife.date/rhel) - communication edition about end date of kinds of distributions
+[End-of-life (EOL)](https://endoflife.date/rhel) - communication edition about end date of kinds of distributions  
+[Linux source code - Bootlin](https://elixir.bootlin.com/linux/v6.11-rc1/source) - upstream linux code online broswer
 
 ## AI Links
 [instructlab](https://github.com/instructlab/instructlab) - InstructLab Command-Line Interface. Use this to chat with a model and execute the InstructLab workflow to train a model using custom taxonomy data.  

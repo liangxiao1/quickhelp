@@ -1,6 +1,18 @@
 # Command Examples
 To pick up commands quickly by given examples.
 
+## crash - vmcore analyze
+```
+crash> sys
+crash> sys -i
+crash> mod -t
+crash> bt
+crash> log|less
+crash> dis -rl <RIP addr>
+crash> ps -p 12207
+crash> files -d 0xffff9bbxxxxxx
+```
+
 ## find - command usage examples  
 
 ```
@@ -17,6 +29,29 @@ $ find . -name *test_subscription_manager_auto* -exec grep 'PASS' {} +
 $ find /path/to/search/ -type f -iname \"*.mp4\" -printf '%s %p\\n'| sort -nr | head -10
 $ find -maxdepth 1 -type f -perm /200 -exec ls -l {} \\;
 $ find . -type f -writable
+```
+
+## firewall-cmd - setup firewall
+```
+# firewall-cmd --zone=public --add-port=80/tcp --permanent
+# firewall-cmd --reload
+# iptables-save |grep 80
+```
+notes: disable selinux if all looks good but not work
+
+## gdb - debug a running python process - [advanced-guide](https://devguide.python.org/advanced-tools/gdb/)
+```
+# yum install -y gdb
+# yum debuginfo-install python311
+# gdb -p 9593
+# gdb python $pid
+(gdb) source /usr/lib/debug/usr/lib64/libpython3.6m.so.1.0-3.6.8-18.el7.x86_64.debug-gdb.py (only required in rhel7)
+(gdb) py-bt
+(gdb) py-list 
+(gdb) info thread
+(gdb) thread thread# (switch to thread#)
+(gdb) call pthread_exit(0) (exit current thread, but will not work if it is waiting for a lock)
+# ldd /usr/bin/gdb | grep python
 ```
 
 ## grubby - update linux boot index and parameters - [official guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sec-making_persistent_changes_to_a_grub_2_menu_using_the_grubby_tool)
@@ -38,6 +73,14 @@ $ find . -type f -writable
 # grubby --update-kernel=ALL --args='rd.blacklist=nouveau'
 ```
 
+## insights-client - Red Hat Insights Client tool 
+```
+# insights-client --register
+# insights-client --check-result
+# insights-client --show-result
+# insights-client --no-upload --keep-archive
+```
+
 ## journalctl - control the journal log size and others
 
 ```
@@ -54,41 +97,25 @@ $ find . -type f -writable
 # journal -u nm-cloud-setup
 ```
 
-## firewall-cmd - setup firewall
-```
-# firewall-cmd --zone=public --add-port=80/tcp --permanent
-# firewall-cmd --reload
-# iptables-save |grep 80
-```
-notes: disable selinux if all looks good but not work
-
-## passwd - update without interaction
+## passwd - update password without interaction
 ```
 # newpass=$(openssl rand -base64 8)
 # echo $newpass|passwd $user --stdin
 ```
-## gdb - debug a running python process - [advanced-guide](https://devguide.python.org/advanced-tools/gdb/)
+
+## tmux — terminal multiplexer
 ```
-# yum install -y gdb
-# yum debuginfo-install python311
-# gdb -p 9593
-# gdb python $pid
-(gdb) source /usr/lib/debug/usr/lib64/libpython3.6m.so.1.0-3.6.8-18.el7.x86_64.debug-gdb.py (only required in rhel7)
-(gdb) py-bt
-(gdb) py-list 
-(gdb) info thread
-(gdb) thread thread# (switch to thread#)
-(gdb) call pthread_exit(0) (exit current thread, but will not work if it is waiting for a lock)
-# ldd /usr/bin/gdb | grep python
-```
-## crash - vmcore analyze
-```
-crash> sys
-crash> sys -i
-crash> mod -t
-crash> bt
-crash> log|less
-crash> dis -rl <RIP addr>
-crash> ps -p 12207
-crash> files -d 0xffff9bbxxxxxx
+# yum install -y tmux
+# tmux - start a new session
+# Ctrl+b d - detach current session
+# tmux attach -t 0 - attach to session 0
+# Ctrl+b [0~9] - Select window 0~9
+# Ctrl+b s - list all sessions
+# Ctrl+b ? - list all options
+# Ctrl+b \" - split window horizontally
+# Ctrl+b % - split window vertically
+# Ctrl+b x - kill a pane"
+# Ctrl+b UP/Down - move cursor between split window
+# Ctrl+b [ - scroll up to see more log
+# tmux ls
 ```
