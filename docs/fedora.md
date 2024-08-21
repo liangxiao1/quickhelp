@@ -4,7 +4,7 @@
 ```
 # dnf upgrade --refresh
 # dnf install dnf-plugin-system-upgrade
-# dnf system-upgrade download --refresh --releasever=32 --nogpgcheck
+# dnf system-upgrade download --refresh --releasever=32 --nogpgcheck [--skip-broken --allowerasing]
 # mv /etc/dnf/protected.d/*.conf ~/ (optional, only required if hit pkg protected error, can move it back after system upgraded)
 # dnf system-upgrade reboot
 ```

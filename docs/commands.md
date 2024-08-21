@@ -16,18 +16,18 @@ crash> files -d 0xffff9bbxxxxxx
 ## find - command usage examples  
 
 ```
-$ find -L . -name '*raw' -exec ls -l {} \\;
-$ find . -type f -path '*para*/*'  -exec ls -l {} \\;
+$ find . -name "*.conf" -exec ls -l {} \; -exec cat {} \; 
+$ find . -type f -path '*para*/*'  -exec ls -l {} \;
 $ find . -type -f |xargs grep 'wget'
 // quote name if hit find: paths must precede expression
-$ find . -name '*results.xml*' -exec readlink -f  {} \\;
-$ find . -mtime +7 -type d -exec ls {} \\;
-$ find /dirname -mtime +7 -exec rm -rf {} \\;
+$ find . -name '*results.xml*' -exec readlink -f  {} \;
+$ find . -mtime +7 -type d -exec ls {} \;
+$ find /dirname -mtime +7 -exec rm -rf {} \;
 // echo file name if found
 $ find . -name *test_subscription_manager_auto* -exec grep 'PASS' {} +
 // top 10 biggest file
 $ find /path/to/search/ -type f -iname \"*.mp4\" -printf '%s %p\\n'| sort -nr | head -10
-$ find -maxdepth 1 -type f -perm /200 -exec ls -l {} \\;
+$ find -maxdepth 1 -type f -perm /200 -exec ls -l {} \;
 $ find . -type f -writable
 ```
 
@@ -102,6 +102,15 @@ notes: disable selinux if all looks good but not work
 # newpass=$(openssl rand -base64 8)
 # echo $newpass|passwd $user --stdin
 ```
+
+## subscription-manager - registers systems to a subscription management service
+```
+# subscription-manager register --username=XXXX --password=XXXX--auto-attach --force
+# subscription-manager status
+# dnf repolist all
+# subscription-manager repos --enable cert-1-for-rhel*
+```
+Note: [Subscription-manager command fails with "NetworkException: Network error code: 400"](https://access.redhat.com/solutions/5187461)
 
 ## tmux — terminal multiplexer
 ```

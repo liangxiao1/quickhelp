@@ -10,6 +10,7 @@
 [instructlab](https://github.com/instructlab/instructlab) - InstructLab Command-Line Interface. Use this to chat with a model and execute the InstructLab workflow to train a model using custom taxonomy data.  
 [ollama](https://github.com/ollama/ollama) - Get up and running with Llama 3.1, Mistral, Gemma 2, and other large language models.  
 [chromadb](https://github.com/chroma-core/chroma) - the AI-native open-source embedding database  
+[gradio](https://www.gradio.app/main/docs/gradio/chatbot) - Build Machine Learning Web Apps — in Python  
 [LyraAI](https://github.com/virt-s1/LyraAI) - LyraAI is a lightweight chatbot to interact with local content(RAG).  
 [prompttools](https://github.com/hegelai/prompttools) - Open-source tools for prompt testing and experimentation, with support for both LLMs (e.g. OpenAI, LLaMA) and vector databases (e.g. Chroma, Weaviate, LanceDB).
 
