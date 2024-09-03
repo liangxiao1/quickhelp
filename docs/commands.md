@@ -54,6 +54,19 @@ notes: disable selinux if all looks good but not work
 # ldd /usr/bin/gdb | grep python
 ```
 
+## rpm - RPM Package Manager
+```
+$ rpm -qp --scripts xxx.rpm
+$ rpm2cpio xxx.rpm | cpio -idmv
+```
+
+## git - source code management
+### git - search commits
+```
+$ git log --author=xxx@yyy.com
+$ git log -S'ret_status=False,' -- utils_lib.py
+```
+
 ## grubby - update linux boot index and parameters - [official guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sec-making_persistent_changes_to_a_grub_2_menu_using_the_grubby_tool)
 
 ```
@@ -128,3 +141,12 @@ Note: [Subscription-manager command fails with "NetworkException: Network error 
 # Ctrl+b [ - scroll up to see more log
 # tmux ls
 ```
+
+## xmllint - command line XML tool
+```
+$ xmllint --xpath "/testsuites/testsuite/@pass" sum.xml
+$ xmllint --xpath "/testsuites/testsuite/testcase" sum.xml
+$ xmllint --xpath "/testsuites/testsuite/testcase/@name" sum.xml
+$ xmllint --xpath '/testsuites/testsuite/testcase[@name="os_tests.tests.test_lifecycle.TestLifeCycle.test_stop_start_vm"]/time' sum.xml
+```
+Note: [XPath stands for XML Path Language](https://developer.mozilla.org/en-US/docs/Web/XPath)

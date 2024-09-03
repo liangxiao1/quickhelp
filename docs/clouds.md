@@ -1,6 +1,7 @@
 # Cloud Usage Examples
 
-## [aws] manager aws resource using awscli
+## AWS Topics
+### [aws] manager aws resource using awscli
 
 ```
 $ pip install awscli
@@ -25,7 +26,7 @@ $ aws sts assume-role --profile redhat-xxxx --role-arn \"arn:aws:iam::xxxx:role/
 $ aws sts get-caller-identity (get current user)
 
 ```      
-## [aws] register AMI by uploading local image - [rhel_doc](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/deploying_red_hat_enterprise_linux_7_on_public_cloud_platforms/index?#deploying-a-virtual-machine-on-aws_cloud-content)
+### [aws] register AMI by uploading local image - [rhel_doc](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/deploying_red_hat_enterprise_linux_7_on_public_cloud_platforms/index?#deploying-a-virtual-machine-on-aws_cloud-content)
 ```
 // optional if you have raw file already
 $ qemu-img convert -f qcow2 -O raw rhel-server-7.7-1-x86_64-kvm.qcow2 rhel-server-7.7-1-x86_64-kvm.raw
@@ -48,7 +49,7 @@ $ aws ec2 describe-import-snapshot-tasks --import-task-ids import-snap-xxxxxx --
 $ aws ec2 register-image --name 'xiliang_RHEL-9.0.0-20210602.1' --description 'xiliang_RHEL-9.0.0-20210602.1' --architecture x86_64  --virtualization-type hvm --root-device-name '/dev/sda1' --block-device-mappings '{\"DeviceName\": \"/dev/sda1\",\"Ebs\": {\"SnapshotId\": \"snap-0890c56xxxxxx\"}}' --ena-support --profile redhat-test --region us-east-1
 ```
 
-## [aws] share ami to another account
+### [aws] share ami to another account
 ```
 $ aws ec2 modify-image-attribute --profile xxx --region us-east-1 --launch-permission "Add=[{UserId=<account>}]" --image-id ami-0xxxx
 $ aws --profile xxx --region us-east-1 ec2 modify-snapshot-attribute --snapshot-id "snap-066xxxxxx" --create-volume-permission "{

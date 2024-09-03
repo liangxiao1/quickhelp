@@ -19,3 +19,32 @@ Now you have it online: https://hostname:9090/.
 # echo "$nfs_ip:/$dir /$target_dir nfs    defaults    0 0\" >>/etc/fstab
 
 ```
+
+## Create your own systemd service unit file
+
+Put your own service unit file under "/usr/lib/systemd/system/".  
+```
+// rhcert-manager.service
+[Unit]
+Description=Refresh rhcert token
+
+[Service]
+StandardError=journal
+ExecStart=bash -c "/home/p3_venv/bin/python  /home/p3_venv/bin/rhcert_manager token --refresh"
+
+[Install]
+WantedBy=multi-user.target
+
+// rhcert-manager.timer
+[Unit]
+Description=Refresh rhcert token every 120 mins
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=120min
+Unit=rhcert-manager.service
+
+[Install]
+WantedBy=timers.target
+```
+Note: [systemd.unit — Unit configuration](https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html)
