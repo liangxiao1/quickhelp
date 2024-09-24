@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Usage Examples &mdash; QuickHelp  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Useful Links" href="usefullinks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            QuickHelp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Linux</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fedora.html">Fedora Relative Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Deploy Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Command Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usefullinks.html">Useful Links</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clouds</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cloud Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aws-topics">AWS Topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aws-manager-aws-resource-using-awscli">[aws] manager aws resource using awscli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aws-register-ami-by-uploading-local-image-rhel-doc">[aws] register AMI by uploading local image - rhel_doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aws-share-ami-to-another-account">[aws] share ami to another account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aws-ec2-allow-console-serial-policy">[aws] ec2_allow_console_serial policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aws-allow-image-import-policy">[aws] allow_image_import policy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QuickHelp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Cloud Usage Examples</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/liangxiao1/quickhelp/blob/master/docs/clouds.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cloud-usage-examples">
+<h1>Cloud Usage Examples<a class="headerlink" href="#cloud-usage-examples" title="Link to this heading"></a></h1>
+<section id="aws-topics">
+<h2>AWS Topics<a class="headerlink" href="#aws-topics" title="Link to this heading"></a></h2>
+<section id="aws-manager-aws-resource-using-awscli">
+<h3>[aws] manager aws resource using awscli<a class="headerlink" href="#aws-manager-aws-resource-using-awscli" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install awscli
+$ aws configure
+$ aws ec2 run-instances --region=us-west-2 --image-id=ami-9fa3xxx --key-name xilixxx --instance-type c5.2xlarge  --security-group-ids sg-xxx --subnet-id subnet-b4xxx --associate-public-ip-address --profile default --placement {\&quot;AvailabilityZone\&quot;:\&quot;us-west-2c\&quot;}
+$ aws ec2 describe-instances --instance-ids i-xxxxxxxx
+$ aws ec2 create-tags --resources i-xxxxxxx --tags Key=Name,Value=xxxxxxx
+$ aws ec2 describe-instance-types --instance-types m5zn.6xlarge --output json|jq &#39;.[\&quot;InstanceTypes\&quot;][][\&quot;VCpuInfo\&quot;]&#39;
+$ aws ec2 get-console-output --output text --latest --instance-id i-xxxxxx
+$ aws ec2 stop-instances --instance-ids i-xxxxxxx --force
+$ aws ec2 describe-instances --instance-ids i-0fda3024xxxxxx
+$ aws ec2 describe-instances --filters \&quot;Name=instance-type,Values=c5.4xlarge\&quot;
+$ aws ec2 create-volume --size 80 --region ap-northeast-1 --availability-zone ap-northeast-1a --volume-type gp2
+$ aws ec2 attach-volume --volume-id vol-xxxxxxxx --instance-id i-xxxxxxx --device /dev/xvdb
+$ aws ec2 describe-images --image-id ami-xxxxxx --query &#39;Images[].EnaSupport&#39;
+$ aws ec2 describe-images --query &#39;Images[*].{ID:ImageId,Name:Name,Public:Public}&#39; --filters &#39;Name=name,Values=*JBEAP-7.2.0*&#39;  --region us-west-1
+$ aws ec2 describe-images --filters Name=name,Values=RHEL-8.[1,2] --region us-west-2  --output text --query &#39;Images[*].[ImageId, Name, Public]&#39;
+$ aws ec2 describe-images --owners xxxxxx|self --query &#39;sort_by(Images, &amp;CreationDate)&quot;, &quot;out&quot;: &quot;&quot;},
+$ aws ec2 describe-images --owners xxxxxx|self --query &#39;sort_by(Images, &amp;CreationDate)[*].[CreationDate,Name,ImageId]&#39; --filters \&quot;Name=name,Values=RHEL-7.?*GA*\&quot; --region us-east-1 --output table
+// https://signin.aws.amazon.com/switchrole?roleName=xxxx&amp;account=xxxx (switch role from web)
+$ aws sts assume-role --profile redhat-xxxx --role-arn \&quot;arn:aws:iam::xxxx:role/xxxx\&quot; --role-session-name session-xiliang (siwtch role from cli)
+$ aws sts get-caller-identity (get current user)
+
+</pre></div>
+</div>
+</section>
+<section id="aws-register-ami-by-uploading-local-image-rhel-doc">
+<h3>[aws] register AMI by uploading local image - <a class="reference external" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/deploying_red_hat_enterprise_linux_7_on_public_cloud_platforms/index?#deploying-a-virtual-machine-on-aws_cloud-content">rhel_doc</a><a class="headerlink" href="#aws-register-ami-by-uploading-local-image-rhel-doc" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// optional if you have raw file already
+$ qemu-img convert -f qcow2 -O raw rhel-server-7.7-1-x86_64-kvm.qcow2 rhel-server-7.7-1-x86_64-kvm.raw
+$ aws s3 cp rhel-server-7.7.1-x86_64-kvm.raw s3://s3-bucket-name
+// import-image directly, not recommended
+$ aws ec2 import-image --platform Linux --license-type BYOL --no-encrypted --description &#39;xiliang_7.9gadoc&#39; --architecture x86_64 --disk-containers Format=Raw,UserBucket=\&quot;{S3Bucket=virtqes1,S3Key=rhel-server-ec2-7.9-30.x86_64.raw}\&quot; --region us-east-1
+$ aws ec2 describe-import-image-tasks --import-task-ids import-ami-xxxxxxxxx
+// import as snapshot and then do register
+$ aws ec2 import-snapshot --disk-container file://containers_9.json --profile xxxxxx --region us-east-1&quot;
+$ cat containers_9.json
+{
+    &quot;Description&quot;: &quot;xiliang_rhel-ec2-9.4-xxx.raw&quot;,
+    &quot;Format&quot;: &quot;raw&quot;,
+    &quot;UserBucket&quot;: {
+        &quot;S3Bucket&quot;: &quot;xilxx_xxxx&quot;,
+        &quot;S3Key&quot;: &quot;rhel-ec2-9.4-xxx.raw&quot;
+    }
+}
+$ aws ec2 describe-import-snapshot-tasks --import-task-ids import-snap-xxxxxx --profile xxxxxx --region us-east-1
+$ aws ec2 register-image --name &#39;xiliang_RHEL-9.0.0-20210602.1&#39; --description &#39;xiliang_RHEL-9.0.0-20210602.1&#39; --architecture x86_64  --virtualization-type hvm --root-device-name &#39;/dev/sda1&#39; --block-device-mappings &#39;{\&quot;DeviceName\&quot;: \&quot;/dev/sda1\&quot;,\&quot;Ebs\&quot;: {\&quot;SnapshotId\&quot;: \&quot;snap-0890c56xxxxxx\&quot;}}&#39; --ena-support --profile redhat-test --region us-east-1
+</pre></div>
+</div>
+</section>
+<section id="aws-share-ami-to-another-account">
+<h3>[aws] share ami to another account<a class="headerlink" href="#aws-share-ami-to-another-account" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ aws ec2 modify-image-attribute --profile xxx --region us-east-1 --launch-permission &quot;Add=[{UserId=&lt;account&gt;}]&quot; --image-id ami-0xxxx
+$ aws --profile xxx --region us-east-1 ec2 modify-snapshot-attribute --snapshot-id &quot;snap-066xxxxxx&quot; --create-volume-permission &quot;{
+    \&quot;Add\&quot;: [
+        {
+            \&quot;UserId\&quot;: \&quot;&lt;account&gt;\&quot;
+        }
+    ]
+    }&quot;
+</pre></div>
+</div>
+<p>note: share snapshot to allow the other account to copy the ami</p>
+</section>
+<section id="aws-ec2-allow-console-serial-policy">
+<h3>[aws] ec2_allow_console_serial policy<a class="headerlink" href="#aws-ec2-allow-console-serial-policy" title="Link to this heading"></a></h3>
+<p>grant permission to allow account access serial console</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="s2">&quot;ec2:GetSerialConsoleAccessStatus&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:EnableSerialConsoleAccess&quot;</span>
+			<span class="p">],</span>
+			<span class="s2">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="s2">&quot;*&quot;</span>
+			<span class="p">]</span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="s2">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;AllowDescribeInstances&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="s2">&quot;ec2:DescribeInstances&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:DescribeInstanceTypes&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:GetSerialConsoleAccessStatus&quot;</span>
+			<span class="p">],</span>
+			<span class="s2">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="s2">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;AllowinstanceBasedSerialConsoleAccess&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="s2">&quot;ec2-instance-connect:SendSerialConsoleSSHPublicKey&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2-instance-connect:SendSSHPublicKey&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2-instance-connect:OpenTunnel&quot;</span>
+			<span class="p">],</span>
+			<span class="s2">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="s2">&quot;*&quot;</span>
+			<span class="p">]</span>
+		<span class="p">}</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="aws-allow-image-import-policy">
+<h3>[aws] allow_image_import policy<a class="headerlink" href="#aws-allow-image-import-policy" title="Link to this heading"></a></h3>
+<p>grant permission to allow account upload images</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="s2">&quot;s3:GetBucketLocation&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;s3:PutObject&quot;</span>
+			<span class="p">],</span>
+			<span class="s2">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="s2">&quot;arn:aws:s3:::xxx&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;arn:aws:s3:::xxx/*&quot;</span>
+			<span class="p">]</span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="s2">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="s2">&quot;ec2:CancelConversionTask&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:CancelExportTask&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:CreateImage&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:CreateInstanceExportTask&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:CreateTags&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:DescribeConversionTasks&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:DescribeExportTasks&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:DescribeExportImageTasks&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:DescribeImages&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:DescribeInstanceStatus&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:DescribeInstances&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:DescribeSnapshots&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:DescribeTags&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:ExportImage&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:ImportInstance&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:ImportVolume&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:StartInstances&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:StopInstances&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:TerminateInstances&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:ImportImage&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:ImportSnapshot&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:DescribeImportImageTasks&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:DescribeImportSnapshotTasks&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;ec2:CancelImportTask&quot;</span>
+			<span class="p">],</span>
+			<span class="s2">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
+		<span class="p">}</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usefullinks.html" class="btn btn-neutral float-left" title="Useful Links" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Xiao Liang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

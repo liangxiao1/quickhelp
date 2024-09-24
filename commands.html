@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Command Examples &mdash; QuickHelp  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Useful Links" href="usefullinks.html" />
+    <link rel="prev" title="Deploy Services" href="services.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            QuickHelp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Linux</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fedora.html">Fedora Relative Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Deploy Services</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#crash-vmcore-analyze">crash - vmcore analyze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#find-command-usage-examples">find - command usage examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#firewall-cmd-setup-firewall">firewall-cmd - setup firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gdb-debug-a-running-python-process-advanced-guide">gdb - debug a running python process - advanced-guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rpm-rpm-package-manager">rpm - RPM Package Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#git-source-code-management">git - source code management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#git-search-commits">git - search commits</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#grubby-update-linux-boot-index-and-parameters-official-guide">grubby - update linux boot index and parameters - official guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#insights-client-red-hat-insights-client-tool">insights-client - Red Hat Insights Client tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#journalctl-control-the-journal-log-size-and-others">journalctl - control the journal log size and others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#msr-tools-collection-of-tools-for-reading-writing-cpu-model-specific-registers">msr-tools - Collection of tools for reading/writing CPU model specific registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#passwd-update-password-without-interaction">passwd - update password without interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subscription-manager-registers-systems-to-a-subscription-management-service">subscription-manager - registers systems to a subscription management service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tmux-terminal-multiplexer">tmux — terminal multiplexer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xmllint-command-line-xml-tool">xmllint - command line XML tool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usefullinks.html">Useful Links</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clouds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="clouds.html">Cloud Usage Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QuickHelp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Command Examples</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/liangxiao1/quickhelp/blob/master/docs/commands.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="command-examples">
+<h1>Command Examples<a class="headerlink" href="#command-examples" title="Link to this heading"></a></h1>
+<p>To pick up commands quickly by given examples.</p>
+<section id="crash-vmcore-analyze">
+<h2>crash - vmcore analyze<a class="headerlink" href="#crash-vmcore-analyze" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">crash</span><span class="o">&gt;</span> <span class="n">sys</span>
+<span class="n">crash</span><span class="o">&gt;</span> <span class="n">sys</span> <span class="o">-</span><span class="n">i</span>
+<span class="n">crash</span><span class="o">&gt;</span> <span class="n">mod</span> <span class="o">-</span><span class="n">t</span>
+<span class="n">crash</span><span class="o">&gt;</span> <span class="n">bt</span>
+<span class="n">crash</span><span class="o">&gt;</span> <span class="n">log</span><span class="o">|</span><span class="n">less</span>
+<span class="n">crash</span><span class="o">&gt;</span> <span class="n">dis</span> <span class="o">-</span><span class="n">rl</span> <span class="o">&lt;</span><span class="n">RIP</span> <span class="n">addr</span><span class="o">&gt;</span>
+<span class="n">crash</span><span class="o">&gt;</span> <span class="n">ps</span> <span class="o">-</span><span class="n">p</span> <span class="mi">12207</span>
+<span class="n">crash</span><span class="o">&gt;</span> <span class="n">files</span> <span class="o">-</span><span class="n">d</span> <span class="mh">0xffff9bb</span><span class="n">xxxxxx</span>
+</pre></div>
+</div>
+</section>
+<section id="find-command-usage-examples">
+<h2>find - command usage examples<a class="headerlink" href="#find-command-usage-examples" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ find . -name &quot;*.conf&quot; -exec ls -l {} \; -exec cat {} \; 
+$ find . -type f -path &#39;*para*/*&#39;  -exec ls -l {} \;
+$ find . -type -f |xargs grep &#39;wget&#39;
+// quote name if hit find: paths must precede expression
+$ find . -name &#39;*results.xml*&#39; -exec readlink -f  {} \;
+$ find . -mtime +7 -type d -exec ls {} \;
+$ find /dirname -mtime +7 -exec rm -rf {} \;
+// echo file name if found
+$ find . -name *test_subscription_manager_auto* -exec grep &#39;PASS&#39; {} +
+// top 10 biggest file
+$ find /path/to/search/ -type f -iname \&quot;*.mp4\&quot; -printf &#39;%s %p\\n&#39;| sort -nr | head -10
+$ find -maxdepth 1 -type f -perm /200 -exec ls -l {} \;
+$ find . -type f -writable
+</pre></div>
+</div>
+</section>
+<section id="firewall-cmd-setup-firewall">
+<h2>firewall-cmd - setup firewall<a class="headerlink" href="#firewall-cmd-setup-firewall" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># firewall-cmd --zone=public --add-port=80/tcp --permanent</span>
+<span class="c1"># firewall-cmd --reload</span>
+<span class="c1"># iptables-save |grep 80</span>
+</pre></div>
+</div>
+<p>notes: disable selinux if all looks good but not work</p>
+</section>
+<section id="gdb-debug-a-running-python-process-advanced-guide">
+<h2>gdb - debug a running python process - <a class="reference external" href="https://devguide.python.org/advanced-tools/gdb/">advanced-guide</a><a class="headerlink" href="#gdb-debug-a-running-python-process-advanced-guide" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># yum install -y gdb</span>
+<span class="c1"># yum debuginfo-install python311</span>
+<span class="c1"># gdb -p 9593</span>
+<span class="c1"># gdb python $pid</span>
+<span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">source</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libpython3</span><span class="mf">.6</span><span class="n">m</span><span class="o">.</span><span class="n">so</span><span class="mf">.1.0</span><span class="o">-</span><span class="mf">3.6.8</span><span class="o">-</span><span class="mf">18.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">debug</span><span class="o">-</span><span class="n">gdb</span><span class="o">.</span><span class="n">py</span> <span class="p">(</span><span class="n">only</span> <span class="n">required</span> <span class="ow">in</span> <span class="n">rhel7</span><span class="p">)</span>
+<span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">py</span><span class="o">-</span><span class="n">bt</span>
+<span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">py</span><span class="o">-</span><span class="nb">list</span> 
+<span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">info</span> <span class="n">thread</span>
+<span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">thread</span> <span class="n">thread</span><span class="c1"># (switch to thread#)</span>
+<span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">call</span> <span class="n">pthread_exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="n">exit</span> <span class="n">current</span> <span class="n">thread</span><span class="p">,</span> <span class="n">but</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">work</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">waiting</span> <span class="k">for</span> <span class="n">a</span> <span class="n">lock</span><span class="p">)</span>
+<span class="c1"># ldd /usr/bin/gdb | grep python</span>
+</pre></div>
+</div>
+</section>
+<section id="rpm-rpm-package-manager">
+<h2>rpm - RPM Package Manager<a class="headerlink" href="#rpm-rpm-package-manager" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rpm -qp --scripts xxx.rpm
+$ rpm2cpio xxx.rpm | cpio -idmv
+</pre></div>
+</div>
+</section>
+<section id="git-source-code-management">
+<h2>git - source code management<a class="headerlink" href="#git-source-code-management" title="Link to this heading"></a></h2>
+<section id="git-search-commits">
+<h3>git - search commits<a class="headerlink" href="#git-search-commits" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git log --author=xxx@yyy.com
+$ git log -S&#39;ret_status=False,&#39; -- utils_lib.py
+</pre></div>
+</div>
+</section>
+</section>
+<section id="grubby-update-linux-boot-index-and-parameters-official-guide">
+<h2>grubby - update linux boot index and parameters - <a class="reference external" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sec-making_persistent_changes_to_a_grub_2_menu_using_the_grubby_tool">official guide</a><a class="headerlink" href="#grubby-update-linux-boot-index-and-parameters-official-guide" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># grubby --info=ALL</span>
+<span class="c1"># grubby --set-default-index=1</span>
+<span class="c1"># grubby --default-index</span>
+<span class="c1"># grubby --default-kernel</span>
+<span class="c1"># grubby --update-kernel=ALL --args=&#39;console=ttyS0&#39;</span>
+<span class="c1"># grubby --update-kernel=ALL --args=&#39;initcall_debug no_console_suspend ignore_loglevel earlyprintk=ttyS0 debug&#39;</span>
+<span class="c1"># grubby --update-kernel=ALL --args=&#39;loglevel=7 debug&#39;</span>
+<span class="c1"># grubby --update-kernel=ALL  --remove-args=&#39;rhgb quite&#39;</span>
+<span class="c1"># grubby --update-kernel=ALL --args=&#39;initcall_blacklist=arm_smmu_driver_init&#39;</span>
+<span class="c1"># grubby --update-kernel=ALL  --remove-args=&#39;kmemleak=on&#39;</span>
+<span class="c1"># grubby --update-kernel=ALL --args=&#39;no_console_suspend&#39;</span>
+<span class="c1"># grubby --update-kernel=ALL --args=&#39;intel_iommu=on pci=realloc&#39;</span>
+<span class="c1"># grubby --update-kernel=ALL --remove-args=&#39;initcall_blacklist=arm_smmu_driver_init&#39;</span>
+<span class="c1"># grubby --update-kernel=ALL --args=&#39;rd.blacklist=nouveau&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="insights-client-red-hat-insights-client-tool">
+<h2>insights-client - Red Hat Insights Client tool<a class="headerlink" href="#insights-client-red-hat-insights-client-tool" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># insights-client --register</span>
+<span class="c1"># insights-client --check-result</span>
+<span class="c1"># insights-client --show-result</span>
+<span class="c1"># insights-client --no-upload --keep-archive</span>
+</pre></div>
+</div>
+</section>
+<section id="journalctl-control-the-journal-log-size-and-others">
+<h2>journalctl - control the journal log size and others<a class="headerlink" href="#journalctl-control-the-journal-log-size-and-others" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># journalctl --vacuum-time=10d</span>
+<span class="c1"># journalctl --vacuum-size=2G</span>
+<span class="c1"># journalctl --rotate</span>
+<span class="c1"># journalctl --vacuum-time=1s</span>
+<span class="c1"># journalctl --since today</span>
+<span class="c1"># journalctl --since &#39;2019-01-30 14:00:00&#39;</span>
+<span class="o">//</span> <span class="n">this</span> <span class="n">boot</span><span class="s1">&#39;s log only</span>
+<span class="c1"># journalctl -b 0</span>
+<span class="c1"># du -hs /var/log/journal</span>
+<span class="c1"># journalctl --output=verbose --grep userfaultfd --boot</span>
+<span class="c1"># journal -u nm-cloud-setup</span>
+</pre></div>
+</div>
+</section>
+<section id="msr-tools-collection-of-tools-for-reading-writing-cpu-model-specific-registers">
+<h2>msr-tools - Collection of tools for reading/writing CPU model specific registers<a class="headerlink" href="#msr-tools-collection-of-tools-for-reading-writing-cpu-model-specific-registers" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># modprobe msr</span>
+<span class="o">//</span><span class="n">wrmsr</span> <span class="o">-</span> <span class="n">tool</span> <span class="k">for</span> <span class="n">writing</span> <span class="n">CPU</span> <span class="n">machine</span> <span class="n">specific</span> <span class="n">registers</span> <span class="p">(</span><span class="n">MSR</span><span class="p">)</span>
+<span class="c1"># wrmsr 0xc0000300 0x0400000000000f1f</span>
+<span class="o">//</span><span class="n">rdmsr</span> <span class="o">-</span> <span class="n">tool</span> <span class="k">for</span> <span class="n">reading</span> <span class="n">CPU</span> <span class="n">machine</span> <span class="n">specific</span> <span class="n">registers</span> <span class="p">(</span><span class="n">MSR</span><span class="p">)</span>
+<span class="c1"># rdmsr 0x10a -a</span>
+</pre></div>
+</div>
+<p>Note:</p>
+<ul class="simple">
+<li><p>you can find msr-tools in RHEL <a class="reference external" href="https://dl.fedoraproject.org/pub/epel/">EPEL</a> repo.</p></li>
+<li><p><a class="reference external" href="https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/reading-writing-msrs-in-linux.html">Reading and Writing Model Specific Registers (MSRs) in Linux</a></p></li>
+</ul>
+</section>
+<section id="passwd-update-password-without-interaction">
+<h2>passwd - update password without interaction<a class="headerlink" href="#passwd-update-password-without-interaction" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># newpass=$(openssl rand -base64 8)</span>
+<span class="c1"># echo $newpass|passwd $user --stdin</span>
+</pre></div>
+</div>
+</section>
+<section id="subscription-manager-registers-systems-to-a-subscription-management-service">
+<h2>subscription-manager - registers systems to a subscription management service<a class="headerlink" href="#subscription-manager-registers-systems-to-a-subscription-management-service" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># subscription-manager register --username=XXXX --password=XXXX--auto-attach --force</span>
+<span class="c1"># subscription-manager status</span>
+<span class="c1"># dnf repolist all</span>
+<span class="c1"># subscription-manager repos --enable cert-1-for-rhel*</span>
+</pre></div>
+</div>
+<p>Note: <a class="reference external" href="https://access.redhat.com/solutions/5187461">Subscription-manager command fails with “NetworkException: Network error code: 400”</a></p>
+</section>
+<section id="tmux-terminal-multiplexer">
+<h2>tmux — terminal multiplexer<a class="headerlink" href="#tmux-terminal-multiplexer" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># yum install -y tmux</span>
+<span class="c1"># tmux - start a new session</span>
+<span class="c1"># Ctrl+b d - detach current session</span>
+<span class="c1"># tmux attach -t 0 - attach to session 0</span>
+<span class="c1"># Ctrl+b [0~9] - Select window 0~9</span>
+<span class="c1"># Ctrl+b s - list all sessions</span>
+<span class="c1"># Ctrl+b ? - list all options</span>
+<span class="c1"># Ctrl+b \&quot; - split window horizontally</span>
+<span class="c1"># Ctrl+b % - split window vertically</span>
+<span class="c1"># Ctrl+b x - kill a pane&quot;</span>
+<span class="c1"># Ctrl+b UP/Down - move cursor between split window</span>
+<span class="c1"># Ctrl+b [ - scroll up to see more log</span>
+<span class="c1"># tmux ls</span>
+</pre></div>
+</div>
+</section>
+<section id="xmllint-command-line-xml-tool">
+<h2>xmllint - command line XML tool<a class="headerlink" href="#xmllint-command-line-xml-tool" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ xmllint --xpath &quot;/testsuites/testsuite/@pass&quot; sum.xml
+$ xmllint --xpath &quot;/testsuites/testsuite/testcase&quot; sum.xml
+$ xmllint --xpath &quot;/testsuites/testsuite/testcase/@name&quot; sum.xml
+$ xmllint --xpath &#39;/testsuites/testsuite/testcase[@name=&quot;os_tests.tests.test_lifecycle.TestLifeCycle.test_stop_start_vm&quot;]/time&#39; sum.xml
+</pre></div>
+</div>
+<p>Note: <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/XPath">XPath stands for XML Path Language</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="services.html" class="btn btn-neutral float-left" title="Deploy Services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usefullinks.html" class="btn btn-neutral float-right" title="Useful Links" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Xiao Liang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
