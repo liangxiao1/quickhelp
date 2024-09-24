@@ -21,3 +21,6 @@
 [os-tests](https://github.com/virt-s1/os-tests) - os-tests is a lightweight, fast and customer centric tests collection for Linux OS.  
 [ltp](https://github.com/linux-test-project/ltp) - Linux Test Project  
 [blktests](https://github.com/osandov/blktests) - Linux kernel block layer testing framework
+
+## Programming Language
+[Python](https://docs.python.org/3/) - Python 3.12.6 documentation

@@ -110,6 +110,18 @@ $ git log -S'ret_status=False,' -- utils_lib.py
 # journal -u nm-cloud-setup
 ```
 
+## msr-tools - Collection of tools for reading/writing CPU model specific registers
+```
+# modprobe msr
+//wrmsr - tool for writing CPU machine specific registers (MSR)
+# wrmsr 0xc0000300 0x0400000000000f1f
+//rdmsr - tool for reading CPU machine specific registers (MSR)
+# rdmsr 0x10a -a
+```
+Note:
+- you can find msr-tools in RHEL [EPEL](https://dl.fedoraproject.org/pub/epel/) repo. 
+- [Reading and Writing Model Specific Registers (MSRs) in Linux](https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/reading-writing-msrs-in-linux.html)
+
 ## passwd - update password without interaction
 ```
 # newpass=$(openssl rand -base64 8)

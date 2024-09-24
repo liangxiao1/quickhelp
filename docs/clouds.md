@@ -61,3 +61,99 @@ $ aws --profile xxx --region us-east-1 ec2 modify-snapshot-attribute --snapshot-
     }"
 ```
 note: share snapshot to allow the other account to copy the ami
+
+### [aws] ec2_allow_console_serial policy
+
+grant permission to allow account access serial console 
+```
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:GetSerialConsoleAccessStatus",
+				"ec2:EnableSerialConsoleAccess"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Sid": "AllowDescribeInstances",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeInstances",
+				"ec2:DescribeInstanceTypes",
+				"ec2:GetSerialConsoleAccessStatus"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "AllowinstanceBasedSerialConsoleAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ec2-instance-connect:SendSerialConsoleSSHPublicKey",
+				"ec2-instance-connect:SendSSHPublicKey",
+				"ec2-instance-connect:OpenTunnel"
+			],
+			"Resource": [
+				"*"
+			]
+		}
+	]
+}
+```
+
+### [aws] allow_image_import policy
+
+grant permission to allow account upload images 
+```
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetBucketLocation",
+				"s3:GetObject",
+				"s3:PutObject"
+			],
+			"Resource": [
+				"arn:aws:s3:::xxx",
+				"arn:aws:s3:::xxx/*"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:CancelConversionTask",
+				"ec2:CancelExportTask",
+				"ec2:CreateImage",
+				"ec2:CreateInstanceExportTask",
+				"ec2:CreateTags",
+				"ec2:DescribeConversionTasks",
+				"ec2:DescribeExportTasks",
+				"ec2:DescribeExportImageTasks",
+				"ec2:DescribeImages",
+				"ec2:DescribeInstanceStatus",
+				"ec2:DescribeInstances",
+				"ec2:DescribeSnapshots",
+				"ec2:DescribeTags",
+				"ec2:ExportImage",
+				"ec2:ImportInstance",
+				"ec2:ImportVolume",
+				"ec2:StartInstances",
+				"ec2:StopInstances",
+				"ec2:TerminateInstances",
+				"ec2:ImportImage",
+				"ec2:ImportSnapshot",
+				"ec2:DescribeImportImageTasks",
+				"ec2:DescribeImportSnapshotTasks",
+				"ec2:CancelImportTask"
+			],
+			"Resource": "*"
+		}
+	]
+}
+```
