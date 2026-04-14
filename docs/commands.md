@@ -1,6 +1,14 @@
 # Command Examples
 To pick up commands quickly by given examples.
 
+## acpi - vmcore analyze
+```
+yum install acpidump or acpica-tools
+acpidump > acpidump.hex
+acpixtract -a acpidump.hex
+iasl -d dsdt.dat 
+```
+
 ## crash - vmcore analyze
 ```
 crash> sys
@@ -52,6 +60,11 @@ notes: disable selinux if all looks good but not work
 (gdb) thread thread# (switch to thread#)
 (gdb) call pthread_exit(0) (exit current thread, but will not work if it is waiting for a lock)
 # ldd /usr/bin/gdb | grep python
+```
+
+kernel - [Dynamic debug](https://www.kernel.org/doc/html/latest/admin-guide/dynamic-debug-howto.html)
+```
+# modprobe i2c_piix4 dyndbg==pmf
 ```
 
 ## rpm - RPM Package Manager
@@ -120,12 +133,20 @@ $ git log -S'ret_status=False,' -- utils_lib.py
 ```
 Note:
 - you can find msr-tools in RHEL [EPEL](https://dl.fedoraproject.org/pub/epel/) repo. 
+- when it can be written on a bare metal instance, this could be a hypervisor issue.
 - [Reading and Writing Model Specific Registers (MSRs) in Linux](https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/reading-writing-msrs-in-linux.html)
 
 ## passwd - update password without interaction
 ```
 # newpass=$(openssl rand -base64 8)
 # echo $newpass|passwd $user --stdin
+```
+
+## rm - remove files or directories  
+Use "--" to make rm stop parsing command line options. To remove a file whose name starts with a '-', for example '-foo', use one of these commands:
+```
+$ rm -- -foo
+$ rm ./-foo
 ```
 
 ## subscription-manager - registers systems to a subscription management service

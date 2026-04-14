@@ -6,6 +6,9 @@
 # systemctl enable --now libvirtd
 # systemctl disable --now firewalld
 # systemctl enable --now cockpit
+# systemctl enable --now virtqemud
+# systemctl enable --now virtstoraged
+# systemctl enable --now virtnetworkd
 # sed  -i 's/^root/#root/g' /etc/cockpit/disallowed-users
 ```
 Now you have it online: https://hostname:9090/.

@@ -5,7 +5,8 @@
 [Red Hat Enterprise Linux Life Cycle Overview](https://access.redhat.com/support/policy/updates/errata) - timeline and concepts like EUS, ELS  
 [EPEL](https://dl.fedoraproject.org/pub/epel/) - Extra Packages for Enterprise Linux  
 [End-of-life (EOL)](https://endoflife.date/rhel) - communication edition about end date of kinds of distributions  
-[Linux source code - Bootlin](https://elixir.bootlin.com/linux/v6.11-rc1/source) - upstream linux code online broswer
+[Linux source code - Bootlin](https://elixir.bootlin.com/linux/v6.11-rc1/source) - upstream linux code online broswer  
+[Manage RHEL running in image mode](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/using_image_mode_for_rhel_to_build_deploy_and_manage_operating_systems/index) - Using image mode for RHEL to build, deploy, and manage operating systems
 
 ## AI Links
 [instructlab](https://github.com/instructlab/instructlab) - InstructLab Command-Line Interface. Use this to chat with a model and execute the InstructLab workflow to train a model using custom taxonomy data.  
